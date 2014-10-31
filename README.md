@@ -1,7 +1,7 @@
-A social network 
+flask-basic-registration
 ========================
 
-Basic user registration package for Flask.
+Basic user registration package for Flask. Use this as a boilerplate for your app.
 
 - Flask==0.10.1
 - Flask-SQLAlchemy==0.16
@@ -14,18 +14,24 @@ Basic user registration package for Flask.
 - itsdangerous==0.22
 - wsgiref==0.1.2
 
+## Setup
 
-
-
+1. clone the repo
+2. setup/activate a virtualenv
+3. install the requirements
+4. update the rdms (sqlite, mysql, postgres)
+5. create the database (*db_create.py*)
 
 ## Todo
 
-1. normal register, login&logout with sqlite database(completed 16th Sep)
-2. remember split normal user and admin, creat chatting group(wirklich)
-3. adding friends(optional)
-4. ...
-5. ...
+1. create better documentation
+2. add unit tests
+3. add email verification
+4. probably a few more things
 
+## Screenshot
+
+![djang-stripe](http://content.screencast.com/users/Mike_Extentech/folders/Jing/media/f250eb0a-3500-47e0-a555-ed0f2f8ddefc/00000209.png)
 
 ## Project structure
 

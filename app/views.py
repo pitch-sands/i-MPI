@@ -1,4 +1,4 @@
-from app import app, db
+from app import app, db,models
 from flask import flash, redirect, render_template, request, session, url_for
 from functools import wraps
 from app.forms import RegisterForm, LoginForm
@@ -61,7 +61,14 @@ def login():
 @login_required
 def members():
     return render_template('members.html')
-
+@app.route('/members/<id>')
+@login_required
+def user(id):
+    user = models.User.query.filter_by(id = id).first()
+    if user == None:
+        flash('User ' + id + ' not found.')
+        return redirect(url_for('login'))
+    return render_template('user.html',user = user)
 
 @app.route('/register/', methods=['GET', 'POST'])
 def register():
@@ -72,6 +79,7 @@ def register():
             form.name.data,
             form.email.data,
             form.password.data,
+            False,
         )
         try:
             db.session.add(new_user)
